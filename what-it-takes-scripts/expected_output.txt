@@ -1,0 +1,123 @@
+### s01_ness_lemma_sympy.py
+(i)  Fokker-Planck stationarity residual: 0
+(ii) div(p Q grad I): 0
+(iii) div f + Gamma lap I: 0
+### s02_ness_simulation.py
+sample covariance:
+ [[2.255 0.009]
+ [0.009 0.657]]
+target:
+ [[2.25 0.  ]
+ [0.   0.64]]
+### s03_jarzynski.py
+E[exp(-w)] = 1.018 +- 0.019
+<w> = 2.272 ; fraction w<0 = 0.143
+analytic <w> = 2.271
+### s04_landauer.py
+3 k_B T at 300 K = 1.243e-20 J
+3 nats = 4.3281 bits
+Landauer bound for 4.328 bits at 300 K = 1.243e-20 J
+Landauer bound for 4.328 bits at 293 K = 1.214e-20 J
+temperature implied by 1.19e-20 J: 287.3 K
+### s05_syncmap_condition.py
+mu(b) injective? False
+Sigma_eta,b applied to ker Sigma_mu,b: [0.]
+mu(b1),mu(b2): [0.373626] [0.373626]  eta(b1),eta(b2): [0.56044] [0.56044]
+joint covariance positive definite: True
+precision entry (eta,mu) [0 => eta independent of mu given b]: 1.99e-17
+### s06_aguilera_appC.py
+Gamma=0.5  Sigma = [[0.5273, 0.0227], [0.0227, 0.4773]]
+Gamma=1.0  Sigma = [[1.0545, 0.0455], [0.0455, 0.9545]]
+K = 0.0476 ; <f_y>_b = 1.1524 b ; ratio in terms of the mode = 24.2
+simulation: actual mode in [-0.17, 0.11] ; integrated average flow in [-5.3, 2.7]
+### s07_quantum_identities.py
+(i)  V + Q_Bohm = 0
+(ii) S = 0 : Var(p) - hbar^2 F/4 - Var(S') = 0 ; Var(S') = 0
+(ii) S = a*x : Var(p) - hbar^2 F/4 - Var(S') = 0 ; Var(S') = 0
+(ii) S = a*x + b*x**2 : Var(p) - hbar^2 F/4 - Var(S') = 0 ; Var(S') = 4*b**2*sigma**2
+### s08_path_action_sympy.py
+1.2  L - [v.v/4G - f.v/2G + V]      = 0
+1.3  p - (v-f)/2G                   = Matrix([[0, 0]])
+1.3  H - (v.v/4G - V)               = 0
+1.4  on v=f: H + L                  = 0 ;  L - div f/2 = 0
+1.9  L(printed) - L(1.2)            = 0
+1.9  Legendre H - H(printed)        = -q*(q*Derivative(I(x1, x2), x1)**2 + q*Derivative(I(x1, x2), x2)**2 - v1*Derivative(I(x1, x2), x2) + v2*Derivative(I(x1, x2), x1))/(2*Gamma)
+     ... equals (v-Q grad I).Q grad I/(2G)?  True
+     ... vanishes on v=f?  True ;  for Q=0?  True
+1.10 L - [xd^2/4G + Idot/2 + V]     = 0
+### s09_information_length_sympy.py
+(i)   KL = (m**2 - 2*m*m2 + m2**2)/(2*sigma**2) ; d2KL/dm2^2 at m2=m: sigma**(-2) ; Fisher: sigma**(-2)
+(ii)  time-Fisher - mdot^2/s^2 = 0
+(ii)  l(inf) = m0/sigma
+(iii) l(inf) with s^2=Gamma/gamma: sqrt(gamma)*m0/sqrt(Gamma)
+### s10_marginal_flow_lemma.py
+mu = [0, 1] eta = [0, 1] : max |E[f_eta|mu] - lemma| = 8.881784197001252e-16
+mu = [0, 1] eta = [0] : max |E[f_eta|mu] - lemma| = 8.881784197001252e-16
+mu = [0, 1, 2] eta = [1, 2] : max |E[f_eta|mu] - lemma| = 8.881784197001252e-16
+mu = [1, 3] eta = [3] : max |E[f_eta|mu] - lemma| = 8.881784197001252e-16
+mu = [0, 1] eta = [2] : max |E[f_eta|mu] - lemma| = 8.881784197001252e-16
+mu = [0, 1] eta = [1, 3] : max |E[f_eta|mu] - lemma| = 8.881784197001252e-16
+### s11_entropy_identities.py
+2.3  H(P) - [H(P|E)+I(E,P)]          = 0.0
+2.3  max|surprisal-(inacc+compl)|    = 8.881784197001252e-16
+2.7  H(A) - [H(A|E)+I(E,P)-I(E,S|A)] = -4.440892098500626e-16
+2.8  E[IG] - I(E,S|A)                = 2.220446049250313e-16 ;  I(E,S)-I(E,S,A) - I(E,S|A) = 4.440892098500626e-16
+8.4  F - [surprisal+KL] = 0.0 ; F-(inacc+compl) = 0.0 ; F >= surprisal: True
+### s12_ness_schrodinger_sympy.py
+5.3  Psi' - (m/hbar) f Psi = 0
+5.4  V - (hbar^2/4m)(I'^2/2 - I'') = 0
+5.5  H Psi = 0
+### s13_classical_hamilton_lorentz.py
+(i)   printed [[0,-1],[1,0]] : a' = -Derivative(I(a, s), s) , s' = Derivative(I(a, s), a)
+(i)   corrected [[0,1],[-1,0]] : a' = Derivative(I(a, s), s) , s' = -Derivative(I(a, s), a)
+(ii)  m a'' - hbar z (E + a' x B) = Matrix([[0, 0, 0]])
+### s14_laplace_free_energy_sympy.py
+optimal s^2 = [1/(alpha + c*r**2)] ; 1/I'' = 1/(alpha + c*r**2)
+F(optimum) + ln p(b) = 0
+### s15_biehl_counterexamples.py
+A4  255*U = [[236.0, 127.0, 93.0, -36.0], [127.0, 274.0, 206.0, 93.0], [93.0, 206.0, 274.0, 127.0], [-36.0, 93.0, 127.0, 236.0]]
+A4  8*R = [[0.0, -1.0, 3.0, 0.0], [1.0, 0.0, -0.0, -3.0], [-3.0, -0.0, 0.0, 1.0], [0.0, 3.0, -1.0, 0.0]]
+A4  U_eta,lambda = -0.1411764705882352  (-12/85 = -0.1411764705882353 )
+A11 U_eta,lambda = 1.1858436993210185e-16 ; 1057*U_eta,eta = 1023.0000000000006
+A11 true flow of lambda on (s,a,lambda): [0.353553, -0.353553, -1.0]
+A11 free-energy form (eq. 20):            [0.181961, -0.347867, -0.967833]
+A4  exact: 255*U = [[236, 127, 93, -36], [127, 274, 206, 93], [93, 206, 274, 127], [-36, 93, 127, 236]]
+A4  exact: 8*R = [[0, -1, 3, 0], [1, 0, 0, -3], [-3, 0, 0, 1], [0, 3, -1, 0]]
+A4  exact: U_eta,lambda = -12/85
+A11 exact: R = [[0, -17*sqrt(2)/3572, 479*sqrt(2)/3572, -62/893], [17*sqrt(2)/3572, 0, -65/14288, 479*sqrt(2)/3572], [-479*sqrt(2)/3572, 65/14288, 0, 17*sqrt(2)/3572], [62/893, -479*sqrt(2)/3572, -17*sqrt(2)/3572, 0]]
+A11 exact: U_eta,lambda = 0 ; 1057*U_eta,eta = 1023
+### s16_aguilera_weak_coupling.py
+eps=0.04 |H_yx|=4.12e-04 |H_yx-pred|=2.20e-05 |Q_ya-C_ya/2|=5.38e-04 |drift+(Cyb+Cby')/2|=3.44e-04 |marg-(Cyb-Cby')/2|=4.08e-04
+eps=0.02 |H_yx|=1.00e-04 |H_yx-pred|=2.80e-06 |Q_ya-C_ya/2|=1.35e-04 |drift+(Cyb+Cby')/2|=8.18e-05 |marg-(Cyb-Cby')/2|=1.02e-04
+eps=0.01 |H_yx|=2.48e-05 |H_yx-pred|=3.53e-07 |Q_ya-C_ya/2|=3.39e-05 |drift+(Cyb+Cby')/2|=1.99e-05 |marg-(Cyb-Cby')/2|=2.54e-05
+### s17_efe_and_qi_timescales.py
+(i)  E[L(eta,s)-L(eta|alpha)] = 1.135048408903056 ; cost - info gain = 1.1350484089030557 ; risk + ambiguity = 1.1350484089030557
+(ii) hbar/(ln2 kB T) = 35.5 fs; pi hbar/(2 ln2 kB T) = 55.8 fs
+### s18_efe_information_gain.py
+(i)  F8.8 = 1.2040 ; RHS of F8.14 = 0.3251 ; corrected E[I]+E D[p(eta)||p(eta|s)] = 1.2040
+(i)  alternative predictive structure: G_IG = 0.3251 ; E[I(pi)] - E D[p(eta|s)||p(eta)] = 0.3251
+(ii) Gaussian sd 0.1: H(S|alpha) = -0.8836 nats (negative) ; discrete example: H(S|alpha) = 0.7373 >= 0
+(iii) at q=p: G = 0.693147 = H(S) ; G_IG = 0.325083 = H(S|eta) = 0.325083 ; G - G_IG = 0.368064 = I(eta;S) = 0.368064
+(iii) random q: G - G_IG = 0.019075 ; I_q(eta;S) = 0.019075 ; q=1/4: G = G_IG = 1.2040
+### s19_most_likely_path.py
+(i)  x'' = Gamma*Derivative(f(x(t)), (x(t), 2)) + f(x(t))*Derivative(f(x(t)), x(t))
+(ii) minimizer for f=-x, x(0)=0, x(1)=1 equals sinh(t)/sinh(1): True
+(ii) action of x_* = 0.656518 ; min action of 5 other paths with the same endpoints = 0.663311
+### s20_housekeeping_heat.py
+Lyapunov residual |J S + S J^T + 2 Gamma I| = 0.00e+00
+analytic housekeeping heat rate (units of k_B T per unit time) = 3.8400
+simulation: mean heat rate = 3.854 ; mean surprisal difference I(x0)-I(xT) = -0.022
+### s21_information_length_vs_distance.py
+(i)  round trip: information length = 6.0000 ; Fisher-Rao distance (start, end) = 0.0000
+(ii) relaxation: information length = 3.0000 ; Fisher-Rao distance in the full Gaussian family = 2.6124
+### s22_action_endpoint_terms.py
+(i)   Gamma=1     kinetic = 0.499977 ; -Delta I/4 = 0.499977 ; endpoint term Delta I/2 = -0.999955
+(i)   Gamma=0.1   kinetic = 0.499977 ; -Delta I/4 = 0.499977 ; endpoint term Delta I/2 = -0.999955
+(i)   Gamma=0.01  kinetic = 0.499977 ; -Delta I/4 = 0.499977 ; endpoint term Delta I/2 = -0.999955
+(ii)  200 random paths: min of [integral terms - |Delta I|/2] = 0.0136 (>= 0)
+(iii) a -> b : Gamma*Delta I | Gamma*max(Delta I,0) | analytic quasi-potential | infimum over T of the closed-form S(T)
+       0.5 ->  2.0 :   1.8750 |   1.8750 |   1.8750 | 1.875000 at T* = 1.3863 (converged)
+       2.0 ->  0.5 :  -1.8750 |   0.0000 |   0.0000 | 0.000000 at T* = 1.3863 (converged)
+       1.0 -> -0.5 :  -0.3750 |   0.0000 |   0.1250 | 0.125000 = limit T -> inf, approached but not attained: S(5), S(10), S(20) = 0.128398, 0.12502270, 0.1250000010
+      -0.3 ->  1.2 :   0.6750 |   0.6750 |   0.7200 | 0.720000 = limit T -> inf, approached but not attained: S(5), S(10), S(20) = 0.722461, 0.72001635, 0.7200000007
+      1 -> -1/2: Delta I = -3/(8 Gamma) < 0, yet the least cost is 1/(8 Gamma) > 0 (descend to 0, then climb).

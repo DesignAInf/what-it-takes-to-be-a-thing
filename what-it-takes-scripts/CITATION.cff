@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use these scripts, please cite the book."
+title: "Verification scripts for What It Takes to Be a Thing: The Free Energy Principle Explained, Tested, and Extended"
+authors:
+  - family-names: Possati
+    given-names: Luca M.
+    affiliation: University of Twente
+type: software
+license: MIT
